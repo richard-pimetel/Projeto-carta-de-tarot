@@ -172,13 +172,74 @@ button:hover {
   
   .card-content h3 {
     color: #ffd700;
-    font-size: 2rem;
+    font-size: 1.7rem;
     margin-bottom: 10px;
   }
   
   .card-content p {
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: #ffee00;
   }
   
   
+
+.modal {
+    display: none; /* Oculta a modal inicialmente */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro semi-transparente */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Garante que a modal fique acima de tudo */
+  }
+  
+  .modal-content {
+    background-image: url('./img/carta\ certa\ agora.png'); /* Imagem de fundo */
+    background-size: cover; /* Cobrir todo o card */
+    background-position: center; /* Centralizar a imagem */
+    width: 300px; /* Largura do card */
+    height: 450px; /* Altura do card */
+    border-radius: 10px; /* Bordas arredondadas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+  }
+  
+  .modal-card {
+    
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 250px;
+  }
+  
+  .close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+.close-modal:hover{
+    color: #ffd700;
+}
+  
+#modal-card-name{
+    color: #ffee00;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5); /* Sombra para melhorar a legibilidade */
+}
+#modal-card-description{
+    font-size: 1.2rem;
+    padding: 20px;
+    color: #7f00f7;
+}

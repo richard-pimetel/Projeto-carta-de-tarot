@@ -23,64 +23,78 @@ const arcanosMenores = [
 
 async function fetchRandomCard() {
     try {
-      const response = await fetch(API_RANDOM_CARD);
-      if (!response.ok) throw new Error(`Erro na requisição: ${response.status} ${response.statusText}`);
+      const response = await fetch(API_RANDOM_CARD)
+      if (!response.ok) throw new Error(`Erro na requisição: ${response.status} ${response.statusText}`)
   
-      const data = await response.json();
+      const data = await response.json()
       if (data.cards?.length) {
-        const cartaSorteada = data.cards[0];
-        const randomCard = document.getElementById('random-card');
-        randomCard.innerHTML = `<h3>${cartaSorteada.name}</h3>`;
-        randomCard.addEventListener('click', () => openModal(cartaSorteada));
+        const cartaSorteada = data.cards[0]
+        const randomCard = document.getElementById('random-card')
+        randomCard.innerHTML = `<h3>${cartaSorteada.name}</h3>`
+        randomCard.addEventListener('click', () => openModal(cartaSorteada))
       } else {
-        console.error("Erro: Nenhuma carta recebida da API.");
-        document.getElementById('random-card').innerHTML = `<h3>Erro ao buscar carta.</h3>`;
+        console.error("Erro: Nenhuma carta recebida da API.")
+        document.getElementById('random-card').innerHTML = `<h3>Erro ao buscar carta.</h3>`
       }
     } catch (error) {
-      console.error("Erro ao buscar carta aleatória:", error);
-      document.getElementById('random-card').innerHTML = `<h3>Erro ao buscar carta.</h3>`;
+      console.error("Erro ao buscar carta aleatória:", error)
+      document.getElementById('random-card').innerHTML = `<h3>Erro ao buscar carta.</h3>`
     }
   }
-
+  function openModal(card) {
+    const modal = document.getElementById('modal')
+    document.getElementById('modal-card-name').textContent = card.name
+    document.getElementById('modal-card-description').textContent = card.meaning_up
+    modal.style.display = 'flex'
+  }
+  
+  function closeModal() {
+    document.getElementById('modal').style.display = 'none'
+  }
+  
+  document.querySelector('.close-modal').addEventListener('click', closeModal)
+  document.getElementById('modal').addEventListener('click', (event) => {
+    if (event.target === document.getElementById('modal')) closeModal()
+  })
   
 async function searchCards(query) {
     if (!query.trim()) {
-      document.getElementById('search-results').innerHTML = '<p>Por favor, digite algo para pesquisar.</p>';
-      return;
+      document.getElementById('search-results').innerHTML = '<p>Por favor, digite algo para pesquisar.</p>'
+      return
     }
   
     try {
-      const response = await fetch(API_ALL_CARDS);
-      const data = await response.json();
-      const cards = data.cards || [];
+      const response = await fetch(API_ALL_CARDS)
+      const data = await response.json()
+      const cards = data.cards || []
   
       const filteredCards = cards.filter(card => {
-        if (query.toLowerCase() === "arcanos maiores") return arcanosMaiores.includes(card.name);
-        if (query.toLowerCase() === "arcanos menores") return arcanosMenores.includes(card.name);
-        return card.name.toLowerCase().includes(query.toLowerCase());
-      });
+        if (query.toLowerCase() === "arcanos maiores") return arcanosMaiores.includes(card.name)
+        if (query.toLowerCase() === "arcanos menores") return arcanosMenores.includes(card.name)
+        return card.name.toLowerCase().includes(query.toLowerCase())
+      })
   
-      const searchResults = document.getElementById('search-results');
-      searchResults.innerHTML = '';
+      const searchResults = document.getElementById('search-results')
+      searchResults.innerHTML = ''
   
       if (filteredCards.length) {
         filteredCards.forEach(card => {
-          const cardElement = document.createElement('div');
-          cardElement.className = 'card-item';
-          cardElement.innerHTML = `<h3>${card.name}</h3>`;
-          cardElement.addEventListener('click', () => openModal(card));
-          searchResults.appendChild(cardElement);
+          const cardElement = document.createElement('div')
+          cardElement.className = 'card-item'
+          cardElement.innerHTML = `<h3>${card.name}</h3>`
+          cardElement.addEventListener('click', () => openModal(card))
+          searchResults.appendChild(cardElement)
         });
       } else {
-        searchResults.innerHTML = '<p>Nenhuma carta encontrada.</p>';
+        searchResults.innerHTML = '<p>Nenhuma carta encontrada.</p>'
       }
     } catch (error) {
-      console.error("Erro ao pesquisar cartas:", error);
+      console.error("Erro ao pesquisar cartas:", error)
     }
   }
   
 
-document.getElementById('draw-card-button').addEventListener('click', fetchRandomCard);
+document.getElementById('draw-card-button').addEventListener('click', fetchRandomCard)
 document.getElementById('search-button').addEventListener('click', () => {
-  searchCards(document.getElementById('search-input').value);
+  searchCards(document.getElementById('search-input').value)
 });
