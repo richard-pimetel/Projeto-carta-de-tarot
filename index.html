@@ -10,9 +10,28 @@
 <body>
     
 
-    <header></header>
+    <header>
+            <h1>Explorador de <span>Tarot</span></h1>
+            <p>Descubra os mistérios do Tarot e suas mensagens.</p>
+            <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Pesquise por uma carta...">
+            <button id="search-button">Pesquisar</button>
+            </div>
+            <div id="search-results"></div>
+            
+    </header>
 
-    <main></main>
+    <main>
+        <section id="random-card-section">
+            <h2>Carta do Dia</h2>
+            <div class="card-container">
+              <div id="random-card" class="card-item">
+                <h3 id="random-card-name">Clique abaixo para sortear uma carta</h3>
+              </div>
+              <button id="draw-card-button">Sortear Carta</button>
+            </div>
+          </section>
+    </main>
 
 
 

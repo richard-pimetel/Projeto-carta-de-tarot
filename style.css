@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #020202;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+header {
+  padding: 20px;
+  background: linear-gradient(to right, #020202, #1c0222);
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h1 span {
+  color: #ffd700;
+}
+
+.search-bar {
+  margin-top: 10px;
+}
+
+.search-bar input {
+  padding: 10px;
+  width: 300px;
+  border: none;
+  border-radius: 5px;
+}
+
+.search-bar button {
+  padding: 10px 15px;
+  background-color: #ffd700;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #ffcc00;
+}
+
+main {
+    margin-top: 20px;
+  }
+  
+  #random-card-section, #search-results-section {
+    background: linear-gradient(to right, #020202, #1c0222);
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+  
+  .card-details h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #ffd700;
+  }
+  
+  button {
+    background-color: #ffd700;
+    color: #1a1a1a;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #ffcc00;
+  }
+  
+  #search-results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
