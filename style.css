@@ -1,10 +1,12 @@
-* {
+/* Reset básico para elementos específicos */
+body, h1, h2, h3, p, button, input {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
 
+/* Estilos globais */
 body {
   background-color: #020202;
   color: #fff;
@@ -26,6 +28,7 @@ h1 span {
   color: #ffd700;
 }
 
+/* Barra de pesquisa */
 .search-bar {
   margin-top: 10px;
 }
@@ -50,196 +53,188 @@ h1 span {
   background-color: #ffcc00;
 }
 
+/* Conteúdo principal */
 main {
-    margin-top: 20px;
+  margin-top: 20px;
 }
-  
+
 #random-card-section, #search-results-section {
-    background: linear-gradient(to right, #020202, #1c0222);
-    padding: 30px;
-    margin-top: 20px;
-    border-radius: 10px;
+  background: linear-gradient(to right, #020202, #1c0222);
+  padding: 30px;
+  margin-top: 20px;
+  border-radius: 10px;
 }
-  
+
 .card-details h3 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #ffd700;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #ffd700;
 }
-  
+
+/* Botões */
 button {
-    background-color: #ffd700;
-    color: #1a1a1a;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  background-color: #ffd700;
+  color: #1a1a1a;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
-  
+
 button:hover {
-    background-color: #ffcc00;
-}
-  
-#search-results {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-  
-.card-item {
-    background-image: url('./img/carta\ certa\ agora.png'); /* Imagem de fundo */
-    background-size: cover; /* Cobrir todo o card */
-    background-position: center; /* Centralizar a imagem */
-    width: 200px; /* Largura do card */
-    height: 300px; /* Altura do card */
-    border-radius: 10px; /* Bordas arredondadas */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff; /* Cor do texto */
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
-  }
-  
-  .card-item:hover {
-    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra maior */
-  }
-  .card-item h3 {
-    color: #fffb00; /* Cor do texto */
-    font-size: 1.5rem; /* Tamanho da fonte */
-    padding: 10px;
-    background: transparent; /* Remove o fundo */
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5); /* Adiciona sombra ao texto para melhorar a legibilidade */
-  }
-  
-  
-  .card-item p {
-    font-size: 2rem;
-    color: #fff;
-    display: none; /* Oculta a mensagem inicialmente */
-  }
-  
-  .card-item.expanded p {
-    display: block; /* Mostra a mensagem quando o card está expandido */
-  }
-  
-  .card-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  #random-card {
-    width: 200px; /* Largura do card */
-    height: 300px; /* Altura do card */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  
-  #random-card h3 {
-    
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
-  #draw-card-button {
-    background-color: #ffd700;
-    
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  #draw-card-button:hover {
   background-color: #ffcc00;
-  }
-  
-  
-  .card-content {
-    padding: 25px;
-  }
-  
-  .card-content h3 {
-    color: #ffd700;
-    font-size: 1.7rem;
-    margin-bottom: 10px;
-  }
-  
-  .card-content p {
-    font-size: 1rem;
-    color: #ffee00;
-  }
-  
-  
+}
 
+/* Resultados da pesquisa */
+#search-results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Cards individuais */
+.card-item {
+  background-image: url('./img/carta certa agora.png'); /* Imagem de fundo */
+  background-size: cover; /* Cobrir todo o card */
+  background-position: center; /* Centralizar a imagem */
+  width: 200px; /* Largura do card */
+  height: 300px; /* Altura do card */
+  border-radius: 10px; /* Bordas arredondadas */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff; /* Cor do texto */
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+.card-item:hover {
+  transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra maior */
+}
+
+.card-item h3 {
+  color: #fffb00; /* Cor do texto */
+  font-size: 1.5rem; /* Tamanho da fonte */
+  padding: 10px;
+  background: transparent; /* Remove o fundo */
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5); /* Sombra no texto */
+}
+
+/* Container de cards */
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+#random-card {
+  width: 200px; /* Largura do card */
+  height: 300px; /* Altura do card */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#random-card h3 {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Botão de sortear carta */
+#draw-card-button {
+  background-color: #ffd700;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#draw-card-button:hover {
+  background-color: #ffcc00;
+}
+
+/* Conteúdo dos cards */
+.card-content {
+  padding: 25px;
+}
+
+.card-content h3 {
+  color: #ffd700;
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  font-size: 1rem;
+  color: #ffee00;
+}
+
+/* Modal */
 .modal {
-    display: none; /* Oculta a modal inicialmente */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro semi-transparente */
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Garante que a modal fique acima de tudo */
-  }
-  
-  .modal-content {
-    background-image: url('./img/carta\ certa\ agora.png'); /* Imagem de fundo */
-    background-size: cover; /* Cobrir todo o card */
-    background-position: center; /* Centralizar a imagem */
-    width: 300px; /* Largura do card */
-    height: 450px; /* Altura do card */
-    border-radius: 10px; /* Bordas arredondadas */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
-  }
-  
-  .modal-card {
-    
-    padding: 20px;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 250px;
-  }
-  
-  .close-modal {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 24px;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-.close-modal:hover{
-    color: #ffd700;
+  display: none; /* Oculta a modal inicialmente */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro semi-transparente */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Garante que a modal fique acima de tudo */
 }
-  
-#modal-card-name{
-    color: #ffee00;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5); /* Sombra para melhorar a legibilidade */
+
+.modal-content {
+  background-image: url('./img/carta certa agora.png'); /* Imagem de fundo */
+  background-size: cover; /* Cobrir todo o card */
+  background-position: center; /* Centralizar a imagem */
+  width: 300px; /* Largura do card */
+  height: 450px; /* Altura do card */
+  border-radius: 10px; /* Bordas arredondadas */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
 }
-#modal-card-description{
-    font-size: 1.2rem;
-    padding: 20px;
-    color: #7f00f7;
+
+.modal-card {
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 250px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.close-modal:hover {
+  color: #ffd700;
+}
+
+#modal-card-name {
+  color: #ffee00;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5); /* Sombra no texto */
+}
+
+#modal-card-description {
+  font-size: 1.2rem;
+  padding: 20px;
+  color: #7f00f7;
 }
